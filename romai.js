@@ -30,20 +30,13 @@ var szamok = {
     "1000": "M",
     "2000": "MM",
     "3000": "MMM",
-    "4000": "IV",
-    "5000": "V",
-    "6000": "VM",
-    "7000": "VMM",
-    "8000": "VMMM",
-    "9000": "IX",
-    "10000": "X",
 
 };
 
 function romai(n) {
     return szamok[n]
 }
-let TesztMenet = convertalas(7902);
+let TesztMenet = convertalas(3999);
 
 function convertalas(bevittSzam) {
     let romaiSzam = "";
