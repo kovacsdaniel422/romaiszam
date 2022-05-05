@@ -43,7 +43,7 @@ var szamok = {
 function romai(n) {
     return szamok[n]
 }
-let valami = convertalas(8432);
+let valami = convertalas(7902);
 
 function convertalas(bevittSzam) {
     let romaiSzam = "";
@@ -69,3 +69,8 @@ function convertalas(bevittSzam) {
     return romaiSzam;
 }
 console.log(valami);
+
+function myFunction() {
+    var x = document.getElementById("myInput").value;
+    document.getElementById("demo").innerHTML = "You wrote: " + convertalas(x);
+}
