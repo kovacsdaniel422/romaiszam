@@ -1,13 +1,3 @@
-function ID(elem) {
-    return document.getElementById(elem);
-}
-function CLASS(elem) {
-    return document.getElementsByClassName(elem)
-}
-function $(elem) {
-    return document.querySelectorAll(elem)
-}
-
 var szamok = new Object();
 var szamok = {
     "1": "I",
@@ -38,43 +28,44 @@ var szamok = {
     "800": "DCCC",
     "900": "CM",
     "1000": "M",
+    "2000": "MM",
+    "3000": "MMM",
+    "4000": "IV",
+    "5000": "V",
+    "6000": "VM",
+    "7000": "VMM",
+    "8000": "VMMM",
+    "9000": "IX",
+    "10000": "X",
 
 };
+
 function romai(n) {
     return szamok[n]
 }
-romai(30);
-let valami= convertalas(12);
+let valami = convertalas(8432);
 
 function convertalas(bevittSzam) {
-    var romaiSzam = "";
-    var num = [];
+    let romaiSzam = "";
+    let num = [];
+    let hanyNulla = "";
     szamSzoveg = bevittSzam.toString();
-    if (szamSzoveg.lenght == 4) {
-        num.push(szamSzoveg.charAt(0) + "000", szamSzoveg.charAt(1) + "00", szamSzoveg.charAt(2) + "0", szamSzoveg.charAt(3))
 
+    for (let index = szamSzoveg.length; index > 0; index--) {
+
+        if (szamSzoveg.charAt((index) - 1) != 0) {
+            num.unshift(szamSzoveg.charAt((index) - 1) + hanyNulla)
+        }
+        hanyNulla = hanyNulla + "0"
+        console.log(num)
+        console.log(hanyNulla)
     }
-    else if (szamSzoveg.lenght == 3) {
-        num.push(szamSzoveg.charAt(0) + "00", szamSzoveg.charAt(1) + "0", szamSzoveg.charAt(2))
 
-    }
-    else if (szamSzoveg.lenght == 2) {
-        num.push(szamSzoveg.charAt(0) + "0", charAt(1))
-
-
-    } else if (szamSzoveg.lenght == 1) {
-        num.push(szamSzoveg.charAt(0))
-
-    }
-    console.log(num);
-
-
-    for (let index = 0; index < num.length - 1; index++) {
+    for (let index = 0; index < num.length; index++) {
         romaiSzam += romai(num[index])
 
     }
-    console.log(num);
+
     return romaiSzam;
 }
 console.log(valami);
-
